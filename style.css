@@ -56,11 +56,11 @@ main {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* With smooth fade-out: */
 .candle.out .flame {
   opacity: 0;
-  transition: opacity 0.6s ease;
-  pointer-events: none; /* optional, prevents interaction */
+  transition: opacity 0.8s ease;
+  animation: none; /* stop flicker */
+  pointer-events: none;
 }
 
 .cake-wrap {
