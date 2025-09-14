@@ -56,9 +56,11 @@ main {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Only hide the flame, not the candle */
+/* With smooth fade-out: */
 .candle.out .flame {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none; /* optional, prevents interaction */
 }
 
 .cake-wrap {
