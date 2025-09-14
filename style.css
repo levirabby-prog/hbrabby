@@ -1,5 +1,3 @@
-/* style.css */
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -24,6 +22,7 @@ main {
   font-size: 16px;
   color: white;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .candles {
@@ -57,6 +56,7 @@ main {
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* Only hide the flame, not the candle */
 .candle.out .flame {
   display: none;
 }
@@ -68,6 +68,15 @@ main {
 
 .cake {
   width: 250px;
+}
+
+.cake.drop {
+  animation: dropCake 0.5s ease forwards;
+}
+
+@keyframes dropCake {
+  0% { transform: translateY(-200px); opacity:0; }
+  100% { transform: translateY(0); opacity:1; }
 }
 
 .knife {
