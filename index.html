@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Happy Birthday RabbyShark 🎂</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Preload images for faster display -->
+  <link rel="preload" href="assets/cake.png" as="image">
+  <link rel="preload" href="assets/cake-sliced.png" as="image">
+  <link rel="preload" href="assets/knife.png" as="image">
 </head>
 <body>
   <main class="app">
@@ -23,11 +28,7 @@
         <div class="candle"><span class="flame"></span></div>
         <div class="candle"><span class="flame"></span></div>
       </div>
-    </section>
-
-    <!-- STAGE 3: Cut button (appears after blow) -->
-    <section id="stage3" class="stage center hidden">
-      <button id="toCakeBtn" class="btn">Tap to cut the cake</button>
+      <button id="toCakeBtn" class="btn hidden">Tap to cut the cake</button>
     </section>
 
     <!-- CAKE STAGE -->
@@ -35,8 +36,8 @@
       <h1 id="hbText" class="hb">Happy Birthday RabbyShark 🎉</h1>
 
       <div id="cakeWrap" class="cake-wrap">
-        <img id="cake" class="cake" src="assets/cake.png" alt="Cake">
-        <img id="knife" class="knife" src="assets/knife.png" alt="Knife">
+        <img id="cake" class="cake hidden" src="assets/cake.png" alt="Cake">
+        <img id="knife" class="knife hidden" src="assets/knife.png" alt="Knife">
         <img id="slice" class="slice hidden" src="assets/cake-sliced.png" alt="Cake Slice">
       </div>
 
