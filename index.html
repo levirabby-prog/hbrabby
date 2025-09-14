@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday RabbyShark 🎂</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- STAGE 1: Start -->
+    <section id="stage1" class="stage center">
+      <p class="lead">Click the button below and after that count to 3</p>
+      <button id="startBtn" class="btn">Start</button>
+    </section>
+
+    <!-- STAGE 2: Candles -->
+    <section id="stage2" class="stage center hidden">
+      <p class="lead">Count to 3 and blow</p>
+      <div class="candles" aria-hidden="true">
+        <div class="candle"><span class="flame"></span></div>
+        <div class="candle"><span class="flame"></span></div>
+        <div class="candle"><span class="flame"></span></div>
+      </div>
+    </section>
+
+    <!-- STAGE 3: Cut button (appears after blow) -->
+    <section id="stage3" class="stage center hidden">
+      <button id="toCakeBtn" class="btn">Tap to cut the cake</button>
+    </section>
+
+    <!-- CAKE STAGE -->
+    <section id="cakeStage" class="stage center hidden">
+      <h1 id="hbText" class="hb">Happy Birthday RabbyShark 🎉</h1>
+
+      <div id="cakeWrap" class="cake-wrap">
+        <img id="cake" class="cake" src="assets/cake.png" alt="Cake">
+        <img id="knife" class="knife" src="assets/knife.png" alt="Knife">
+      </div>
+
+      <p class="hint">Move your finger across the cake to cut it</p>
+
+      <button id="finalBtn" class="btn hidden">Enjoy Your Day, Cutie 💓</button>
+    </section>
+
+    <!-- Celebration overlay (hidden until final) -->
+    <div id="celebrateOverlay" class="overlay hidden" aria-hidden="true">
+      <h1>Enjoy Your Day, Cutie💓</h1>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
