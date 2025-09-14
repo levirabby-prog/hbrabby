@@ -1,88 +1,105 @@
-:root{
-  --bg:#fff0f5;
-  --accent:#e94b5c;
-  --text:#222;
-  --card:#fff;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #fff8f0;
+  color: #333;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%; margin:0}
-body{
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
+main {
+  padding: 20px;
 }
 
-.app{max-width:640px; margin:0 auto; padding:28px}
-
-.stage{background:var(--card); border-radius:14px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin-bottom:18px}
-.center{text-align:center}
-.hidden{display:none}
-
-.lead{font-size:1.05rem; margin:0 0 18px; color:#333}
-.hb{font-size:1.25rem; margin:6px 0 12px}
-
-/* Button */
-.btn{
-  background:var(--accent);
-  color:#fff;
-  border:0; padding:12px 22px; border-radius:12px;
-  font-weight:700; font-size:1rem; cursor:pointer;
-  box-shadow:0 8px 20px rgba(233,75,92,0.16);
+.stage {
+  margin-top: 50px;
 }
 
-/* Candles */
-.candles{display:flex; gap:20px; justify-content:center; margin-top:8px}
-.candle{width:44px;height:110px;background:#ffeef2;border-radius:8px;position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;box-shadow:inset 0 -6px 10px rgba(0,0,0,0.04)}
-.flame{
-  width:12px;height:26px;border-radius:50% 50% 40% 40%;
-  background: radial-gradient(circle at 30% 30%, #fff37f, #ffd14b 40%, #ff8b3d 80%);
-  box-shadow:0 6px 18px rgba(255,120,50,0.18);
-  transform-origin:50% 85%;
-  animation:flicker 260ms linear infinite;
-  display:block;
-}
-@keyframes flicker{
-  0%{transform:translateY(0) rotate(0deg)}
-  50%{transform:translateY(-2px) rotate(-2deg)}
-  100%{transform:translateY(0) rotate(2deg)}
-}
-/* extinguish */
-.flame.out{opacity:0; transform:scale(0.25) translateY(-6px); transition:opacity .45s, transform .45s}
-
-/* Cake area */
-.cake-wrap{position:relative; width:100%; max-width:420px; height:320px; margin:0 auto; overflow:visible}
-.cake{width:100%; max-width:420px; display:block; margin:0 auto; transform:translateY(-360px); transition:transform .9s cubic-bezier(.2,.9,.4,1)}
-.cake.drop{transform:translateY(0);} /* trigger drop */
-
-/* Knife: fixed so it follows finger, pointer-events:none so touches don't get blocked */
-.knife{
-  position:fixed;
-  width:120px;
-  height:auto;
-  left:20px; top:20px;
-  transform:translate(-50%,-50%) rotate(-20deg);
-  transition:transform .04s linear;
-  z-index:9999;
-  pointer-events:none;
-  display:none; /* revealed when cake shown */
+.hidden {
+  display: none;
 }
 
-/* hint */
-.hint{color:#666; font-size:.95rem; margin-top:10px}
-
-/* final overlay */
-.overlay{
-  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
-  background:rgba(255,240,246,0.95); z-index:99999;
+.btn {
+  padding: 10px 20px;
+  background: #ff7f7f;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
 }
-.overlay h1{font-size:2rem; color:var(--accent); margin:0}
 
-/* responsive tweaks */
-@media (max-width:420px){
-  .cake-wrap{height:260px}
-  .knife{width:88px}
-  .candle{width:34px;height:86px}
-  .btn{padding:10px 18px}
+.candles {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.candle {
+  width: 30px;
+  height: 80px;
+  background: #ffcc66;
+  margin: 0 10px;
+  position: relative;
+}
+
+.flame {
+  width: 15px;
+  height: 25px;
+  background: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: 7px;
+  animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.candle.out .flame {
+  display: none;
+}
+
+.cake-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.cake {
+  width: 250px;
+}
+
+.knife {
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  touch-action: none; /* mobile-friendly drag */
+}
+
+.slice {
+  width: 100px;
+  margin-top: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff4d6d;
+  z-index: 100;
 }
