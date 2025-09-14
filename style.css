@@ -16,10 +16,6 @@ main {
   margin-top: 50px;
 }
 
-.hidden {
-  display: none;
-}
-
 .btn {
   padding: 10px 20px;
   background: #ff7f7f;
@@ -102,4 +98,8 @@ main {
   font-weight: bold;
   color: #ff4d6d;
   z-index: 100;
+}
+
+.hidden {
+  display: none !important;
 }
